@@ -10,8 +10,8 @@ export default class Welcome_Modal extends Component {
     }
 
     render() {
-       return(
-           <div>
+        return(
+            <div>
                 <Modal isOpen={this.props.modal} toggle_modal={this.props.toggle_modal}>
                     <ModalHeader toggle={this.props.toggle_modal}>Welcome to the Reactstrap Playground!</ModalHeader>
                     <ModalBody>
@@ -24,7 +24,7 @@ export default class Welcome_Modal extends Component {
                     </ModalFooter>
                 </Modal>
             </div>
-       );
+        );
     }
 
     handleKeyPress = (event) => {
@@ -34,5 +34,4 @@ export default class Welcome_Modal extends Component {
             {this.props.updateState()}
         }
     }
-
 }
