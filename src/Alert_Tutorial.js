@@ -22,9 +22,6 @@ export default class Alert_Tutorial extends Component {
     render() {
         return (
             <div>
-                <h3>ALERTS</h3>
-                <br></br>
-                <br></br>
                 <Alert color={this.state.alert_color}>{this.state.alert_text}</Alert>
                 <Input type="text" placeholder="Enter some text for your alert message..." onChange={this.update_alert_text}/>
                 <form>

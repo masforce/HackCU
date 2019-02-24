@@ -25,9 +25,6 @@ export default class Card_Tutorial extends Component {
     render() {
         return (
             <div>
-                <h3>CARDS</h3>
-                <br></br>
-                <br></br>
                 <Container>
                     <Card>
                         <CardHeader style={{color: "white", background: this.state.header_color}}>{this.state.header_text}</CardHeader>
@@ -68,7 +65,7 @@ export default class Card_Tutorial extends Component {
                     </Col>
                     <Col>
                         <form>
-                            <h2>Choose a body color...</h2>
+                            <h2>Choose a header color...</h2>
                             <div className="radio">
                                 <label>
                                     <input type="radio" value="red" checked={this.state.body_option === 'red'} onChange={this.handle_body_change} />

@@ -54,9 +54,8 @@ class SimpleGrow extends React.Component {
 
         return (
             <Container>
-                <h1>SWITCHES</h1>
                 <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
-                <div id={"seeCode"}>
+                <div id={"seeSwitchCode"}>
                     {this.state.message}
                 </div>
                 <div className={classes.root} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>

@@ -21,7 +21,6 @@ export default class Button_Tutorial extends Component {
     render() {
         return (
             <div>
-                <h3>BUTTONS</h3>
                 <div id={"buttonCustom"}>
                     <Button style={{width: '50%', marginRight: '10px'}} color={this.state.button_color}>{this.state.button_text}</Button>
                     <Input style={{width: '50%'}} type="text" placeholder="Enter a name for your button..." onChange={this.update_button_text}/>
