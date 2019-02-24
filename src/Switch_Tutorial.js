@@ -60,7 +60,21 @@ class SimpleGrow extends React.Component {
                     <Grow
                         in={checked}
                         style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 500 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
                         {...(checked ? { timeout: 1000 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 1500 } : {})}
                     >
                         {polygon}
                     </Grow>
@@ -74,6 +88,13 @@ class SimpleGrow extends React.Component {
                     <Grow
                         in={checked}
                         style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 2500 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
                         {...(checked ? { timeout: 3000 } : {})}
                     >
                         {polygon}
@@ -81,7 +102,21 @@ class SimpleGrow extends React.Component {
                     <Grow
                         in={checked}
                         style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 3500 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
                         {...(checked ? { timeout: 4000 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 4500 } : {})}
                     >
                         {polygon}
                     </Grow>
