@@ -29,7 +29,7 @@ const styles = theme => ({
 class SimpleGrow extends React.Component {
     state = {
         checked: false,
-        message: ""
+        message: "Switch is OFF"
     };
 
     handleChange = () => {
