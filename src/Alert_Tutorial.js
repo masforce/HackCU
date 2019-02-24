@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Button from "reactstrap/es/Button";
 import Alert from 'reactstrap/es/Alert';
+import Button from "./Button_Tutorial";
+import Input from "reactstrap/es/Input";
 
 export default class Alert_Tutorial extends Component {
     constructor(props) {
@@ -10,16 +11,19 @@ export default class Alert_Tutorial extends Component {
         this.state = {
             alert_selected_option: "default",
             alert_color: "secondary",
-            alert_message: ""
+            alert_message: "",
+            alert_text: "I am an Alert! Edit Me!"
         };
         this.handle_alert_change = this.handle_alert_change.bind(this);
+        this.update_alert_text = this.update_alert_text.bind(this);
     };
 
     render() {
         return (
             <div>
                 <h1>ALERTS</h1>
-                <Alert color={this.state.alert_color}>I am an Alert! Change My Color!</Alert>
+                <Alert color={this.state.alert_color}>{this.state.alert_text}</Alert>
+                <Input type="text" onChange={this.update_alert_text}/>
                 <form>
                     <div className="radio">
                         <label>
@@ -53,15 +57,15 @@ export default class Alert_Tutorial extends Component {
         switch(changeEvent.target.value) {
             case "red":
                 color = "danger";
-                message = "<Alert color='danger'>Change my color!</Alert>";
+                message = `<Alert color='danger'>${this.state.alert_text}</Alert>`;
                 break;
             case "green":
                 color = "success";
-                message = "<Alert color='success'>Change my color!</Alert>";
+                message = `<Alert color='success'>${this.state.alert_text}</Alert>`;
                 break;
             case "blue":
                 color = "primary";
-                message = "<Alert color='primary'>Change my color!</Alert>";
+                message = `<Alert color='primary'>${this.state.alert_text}</Alert>`;
                 break;
             default:
                 color = "secondary";
@@ -72,6 +76,10 @@ export default class Alert_Tutorial extends Component {
             alert_color: color,
             alert_message: message
         });
+    }
+
+    update_alert_text(event) {
+        this.setState({alert_text: event.target.value})
     }
 }
 
