@@ -4,6 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,6 +17,11 @@ code {
 h1 {
   color: black;
   font-size: 30px;
+}
+
+h3 {
+  float: left;
+  margin-bottom: 20px;
 }
 
 #content {
@@ -43,25 +49,48 @@ h1 {
   box-shadow: 0px 0px 3px;
 }
 
-#buttonComponent{
+#column {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  display: block;
+  width: 80%;
+}
+
+#buttonComponent {
+  padding: 20px;
+  width: 100%;
+}
+#buttonCustom {
+  width: 100%;
+  display: flex;
+}
+#alertComponent {
   padding: 20px;
   width: 100%;
 }
 
-#alertComponent{
+#sliderComponent {
   padding: 20px;
   width: 100%;
+  margin-bottom: 30px;
 }
 
-#sliderComponent{
+#cardComponent {
   padding: 20px;
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom: 30px;
+}
+
+#switchComponent {
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 #seeCode {
   height: 40px;
-  background-color: #ffff;
+  background-color: white;
   padding: 5px;
   border-style: inset;
   border-color: #bfc0c1;
@@ -70,18 +99,18 @@ h1 {
 }
 
 #seeSliderCode {
-   height: 120px;
-   background-color: #ffff;
-   padding: 5px;
-   border-style: inset;
-   border-color: #bfc0c1;
-   font-family: 'Ubuntu', 'Arial';
-   font-weight: bold;
- }
+  height: 120px;
+  background-color: white;
+  padding: 5px;
+  border-style: inset;
+  border-color: #bfc0c1;
+  font-family: 'Ubuntu', 'Arial';
+  font-weight: bold;
+}
 
 #seeCardCode {
-  height: 75px;
-  background-color: #ffff;
+  height: 84px;
+  background-color: white;
   padding: 5px;
   border-style: inset;
   border-color: #bfc0c1;
@@ -90,6 +119,6 @@ h1 {
 }
 
 #resize {
-  width: 200px;
+  width: 150px;
   height: auto;
 }

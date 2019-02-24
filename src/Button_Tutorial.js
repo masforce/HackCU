@@ -20,9 +20,12 @@ export default class Button_Tutorial extends Component {
     render() {
         return (
             <div>
-                <h1>BUTTONS</h1>
-                <Button color={this.state.button_color}>{this.state.button_text}</Button>
-                <Input type="text" placeholder="Enter a name for your button..." onChange={this.update_button_text}/>
+                <h3>BUTTONS</h3>
+                <div id={"buttonCustom"}>
+                    <Button style={{width: '50%', marginRight: '10px'}} color={this.state.button_color}>{this.state.button_text}</Button>
+                    <Input style={{width: '50%'}} type="text" placeholder="Enter a name for your button..." onChange={this.update_button_text}/>
+                </div>
+                <br></br>
                 <form>
                     <div className="radio">
                         <label>
@@ -42,7 +45,9 @@ export default class Button_Tutorial extends Component {
                             BLUE
                         </label>
                     </div>
-                    <div id={"seeCode"}>
+                    <br></br>
+                    <p>This is what the code looks like:</p>
+                    <div id="seeCode">
                         {this.state.message}
                     </div>
                 </form>
@@ -51,7 +56,7 @@ export default class Button_Tutorial extends Component {
     }
 
     update_button_text(event) {
-       this.setState({button_text: event.target.value}) ;
+        this.setState({button_text: event.target.value}) ;
     }
 
     handleOptionChange(changeEvent) {
