@@ -19,6 +19,7 @@ export default class Card_Tutorial extends Component {
         this.update_card_text = this.update_card_text.bind(this);
         this.handle_body_change = this.handle_body_change.bind(this);
         this.handle_header_change = this.handle_header_change.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     render() {
@@ -94,6 +95,20 @@ export default class Card_Tutorial extends Component {
                     {this.state.message}
                 </div>
             </div>
+        );
+    }
+
+    reset() {
+        this.setState(
+            {
+                header_text: 'I am a card! Edit me!',
+                body_text: 'This is some text for the body of the card',
+                header_color: "gray",
+                body_color: "silver",
+                header_option: "default",
+                body_option: "default",
+                message: ""
+            }
         );
     }
 

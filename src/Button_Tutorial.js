@@ -15,6 +15,7 @@ export default class Button_Tutorial extends Component {
 
         this.handleOptionChange = this.handleOptionChange.bind(this);
         this.update_button_text = this.update_button_text.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     render() {
@@ -52,6 +53,17 @@ export default class Button_Tutorial extends Component {
                     </div>
                 </form>
             </div>
+        );
+    }
+
+    reset() {
+        this.setState(
+            {
+                selectedOption: "default",
+                button_color: "secondary",
+                message: "",
+                button_text: "I am a Button! Edit Me!"
+            }
         );
     }
 
