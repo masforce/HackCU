@@ -14,6 +14,7 @@ import Card_Tutorial from "./Card_Tutorial";
 import Switch_Tutorial from "./Switch_Tutorial";
 import hackcu_image from './images/hackcu_logo.png';
 import { GithubPicker} from 'react-color';
+import Welcome_Modal from "./Welcome_Modal";
 
 
 export default class Example extends React.Component {
@@ -25,6 +26,7 @@ export default class Example extends React.Component {
         this.handle_color = this.handle_color.bind(this);
         this.toggle = this.toggle.bind(this);
         this.reset = this.reset.bind(this);
+        this.toggle = this.toggle.bind(this);
 
         this.state = {
             isOpen: false,
@@ -32,6 +34,7 @@ export default class Example extends React.Component {
             value: '',
             stylePath: './index2.css',
             background_color: '#82b1ff',
+            modal: true
         };
     }
 
@@ -75,20 +78,23 @@ export default class Example extends React.Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
+                <div>
+                    <Welcome_Modal updateState={this.updateState}
+                                   update={this.update}
+                                   value={this.state.value}/>
+                </div>
                 <div style={{background: this.state.background_color}}>
                     <div id="content" style={{backgroundColor: this.state.background}}>
-                        <div id="enterName">
-                            <Input style={{width:"80%", margin:"auto", padding:"20px"}} type={"text"} placeholder="(enter your username here)" value={this.state.value} onChange={this.update} />
-                            <Button style={{width:"20%"}} onClick={this.updateState}>Submit</Button>
-                        </div>
                         <h1>{this.state.username}</h1>
                         <div id="forum">
-                            <h2>See what Reactstrap components of this site you can change:</h2>
-                            <br></br>
-                            <hr></hr>
-                            <p>Change Background</p>
+                            <h2>See what parts of this site you can change:</h2>
+                            <Row style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <h5>Start by selecting a background color...</h5>
+                            </Row>
                             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                <GithubPicker onChangeComplete={this.handle_color}/>
+                                <Row>
+                                    <GithubPicker onChangeComplete={this.handle_color}/>
+                                </Row>
                             </div>
                             <div id="column">
                                 <div id="buttonComponent">
