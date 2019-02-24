@@ -84,7 +84,7 @@ export default class Card_Tutorial extends Component {
                         </form>
                     </Col>
                  </Row>
-                <div>
+                <div id={"seeCardCode"}>
                     {this.state.message}
                 </div>
             </div>

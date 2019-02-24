@@ -12,7 +12,7 @@ import Button_Tutorial from "./Button_Tutorial";
 import Slider_Tutorial from "./Slider_Tutorial";
 import Card_Tutorial from "./Card_Tutorial";
 import Switch_Tutorial from "./Switch_Tutorial";
-import Password from './Password';
+import hackcu_image from './images/hackcu_logo.png';
 
 export default class Example extends React.Component {
     constructor(props) {
@@ -40,15 +40,12 @@ export default class Example extends React.Component {
             <div>
                 <link rel="stylesheet" type="text/css" href='index.css' />
                 <Navbar style={{backgroundColor: "#edf1f7", boxShadow: '0px 0px 8px'}} light expand="md">
-                    <NavbarBrand href="/"><h1>Hack CU</h1></NavbarBrand>
+                    <NavbarBrand href="/"><h1><img id="resize" src={hackcu_image}/></h1></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink href="/components/">Components</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink onClick={this.open_password_component}>Password</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
@@ -74,15 +71,10 @@ export default class Example extends React.Component {
                     </Collapse>
                 </Navbar>
                 <div id="content" style={{backgroundColor: this.state.background}}>
-
-
                     <div id="enterName">
-
                         <Input style={{width:"80%", margin:"auto", padding:"20px"}} type={"text"} placeholder="(enter your username here)" value={this.state.value} onChange={this.update} />
                         <Button style={{width:"20%"}} onClick={this.updateState}>Submit</Button>
-
                     </div>
-
                     <h1>{this.state.username}</h1>
                     <div id="forum">
                         <h2>See what parts of this site you can change:</h2>
@@ -94,24 +86,30 @@ export default class Example extends React.Component {
                             </FormGroup>
                         </Form>
                         <Container>
-                            <Button_Tutorial/>
+                            <div id={"buttonComponet"}>
+                                <Button_Tutorial/>
+                            </div>
                             <br/>
-                            <Alert_Tutorial/>
+                            <div id={"alertComponent"}>
+                                <Alert_Tutorial/>
+                            </div>
                             <br/>
-                            <Card_Tutorial/>
+                            <div id={"cardComponent"}>
+                                <Card_Tutorial/>
+                            </div>
                             <br/>
-                            <Slider_Tutorial/>
+                            <div id={"sliderComponent"}>
+                                <Slider_Tutorial/>
+                            </div>
                             <br/>
-                            <Switch_Tutorial/>
+                            <div id={"switchComponent"}>
+                                <Switch_Tutorial/>
+                            </div>
                         </Container>
                     </div>
                 </div>
             </div>
         );
-    }
-
-    open_password_component() {
-      return (<Password/>);
     }
 
     update(e) {
