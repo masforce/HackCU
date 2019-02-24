@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Alert from 'reactstrap/es/Alert';
+import Button from "./Button_Tutorial";
 import Input from "reactstrap/es/Input";
 
 export default class Alert_Tutorial extends Component {
@@ -20,7 +21,9 @@ export default class Alert_Tutorial extends Component {
     render() {
         return (
             <div>
-                <h1>ALERTS</h1>
+                <h3>ALERTS</h3>
+                <br></br>
+                <br></br>
                 <Alert color={this.state.alert_color}>{this.state.alert_text}</Alert>
                 <Input type="text" placeholder="Enter some text for your alert message..." onChange={this.update_alert_text}/>
                 <form>
@@ -42,7 +45,8 @@ export default class Alert_Tutorial extends Component {
                             BLUE
                         </label>
                     </div>
-                    <div id={"seeCode"}>
+                    <p>This is what the code looks like:</p>
+                    <div id="seeCode">
                         {this.state.alert_message}
                     </div>
                 </form>
@@ -81,4 +85,3 @@ export default class Alert_Tutorial extends Component {
         this.setState({alert_text: event.target.value})
     }
 }
-

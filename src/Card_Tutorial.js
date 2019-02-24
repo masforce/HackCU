@@ -24,7 +24,9 @@ export default class Card_Tutorial extends Component {
     render() {
         return (
             <div>
-                <h1>CARDS</h1>
+                <h3>CARDS</h3>
+                <br></br>
+                <br></br>
                 <Container>
                     <Card>
                         <CardHeader style={{color: "white", background: this.state.header_color}}>{this.state.header_text}</CardHeader>
@@ -33,9 +35,12 @@ export default class Card_Tutorial extends Component {
                         </CardBody>
                     </Card>
                 </Container>
-                <br/>
+                <br></br>
+
                 <Input type="text" placeholder="Enter some text for your card header..." onChange={this.update_header_text}/>
+                <br></br>
                 <Input type="text" placeholder="Enter some text for your card body..." onChange={this.update_card_text}/>
+                <br></br>
                 <Row>
                     <Col>
                         <form>
@@ -84,6 +89,7 @@ export default class Card_Tutorial extends Component {
                         </form>
                     </Col>
                  </Row>
+                <p>This is what the code looks like:</p>
                 <div id={"seeCardCode"}>
                     {this.state.message}
                 </div>
