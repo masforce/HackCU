@@ -49,8 +49,8 @@ class StepSlider extends React.Component {
                             step={1}
                             onChange={this.handleChange}
                         />
+                        {this.state.message}
                         <div id={"seeSliderCode"}>
-                            {this.state.message}
                         </div>
                     </div>
                 </div>

@@ -32,6 +32,7 @@ export default class Example extends React.Component {
         this.state = {
             isOpen: false,
             username: 'And your name is...?',
+            endline: '',
             value: '',
             stylePath: './index2.css',
             background_color: '#82b1ff',
@@ -117,7 +118,7 @@ export default class Example extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <h1>Thanks for visiting.</h1>
+                        <h1>{this.state.endline}</h1>
                         <br></br>
                     </div>
 
@@ -144,6 +145,7 @@ export default class Example extends React.Component {
             {
                 isOpen: false,
                 username: 'And your name is...?',
+                endline: 'Thanks for visiting!',
                 value: '',
                 stylePath: './index2.css',
                 background_color: '#82b1ff',
@@ -166,6 +168,7 @@ export default class Example extends React.Component {
         if (this.state.value != "") {
             this.setState({
                 username: 'Nice to meet you, ' + this.state.value + '!',
+                endline: 'Thanks for visiting, ' + this.state.value + '!',
                 value: ""
             });
         }
