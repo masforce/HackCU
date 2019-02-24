@@ -22,33 +22,38 @@ export default class App extends Component {
             <Button color={this.state.button_color}>Change my color!</Button>
             <div className="row">
                 <div className="col-sm-12">
-                    <form onSubmit={this.handleFormSubmit}>
-                        <div className="radio">
-                            <label>
-                                <input type="radio" value="red" checked={this.state.selectedOption === 'red'} onChange={this.handleOptionChange} />
-                                RED
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <label>
-                                <input type="radio" value="green" checked={this.state.selectedOption === 'green'} onChange={this.handleOptionChange}/>
-                                GREEN
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <label>
-                                <input type="radio" value="blue" checked={this.state.selectedOption === 'blue'} onChange={this.handleOptionChange}/>
-                                BLUE
-                            </label>
-                        </div>
-                        <div>
-                            {this.state.message}
-                        </div>
-                    </form>
+                    {this.setColorForm()}
                 </div>
             </div>
         </div>
     );
+  }
+
+  setColorForm(){
+      return(
+          <form onSubmit={this.handleFormSubmit}>
+          <div className="radio">
+              <label>
+                  <input type="radio" value="red" checked={this.state.selectedOption === 'red'} onChange={this.handleOptionChange} />
+                  RED
+              </label>
+          </div>
+          <div className="radio">
+              <label>
+                  <input type="radio" value="green" checked={this.state.selectedOption === 'green'} onChange={this.handleOptionChange}/>
+                  GREEN
+              </label>
+          </div>
+          <div className="radio">
+              <label>
+                  <input type="radio" value="blue" checked={this.state.selectedOption === 'blue'} onChange={this.handleOptionChange}/>
+                  BLUE
+              </label>
+          </div>
+          <div>
+              {this.state.message}
+          </div>
+      </form>);
   }
 
     handleOptionChange(changeEvent) {
