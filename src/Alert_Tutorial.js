@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Alert from 'reactstrap/es/Alert';
-import Button from "./Button_Tutorial";
 import Input from "reactstrap/es/Input";
 
 export default class Alert_Tutorial extends Component {

@@ -10,6 +10,7 @@ import './App.css';
 import Alert_Tutorial from "./Alert_Tutorial";
 import Button_Tutorial from "./Button_Tutorial";
 import Slider_Tutorial from "./Slider_Tutorial";
+import Card_Tutorial from "./Card_Tutorial";
 
 export default class Example extends React.Component {
     constructor(props) {
@@ -88,8 +89,13 @@ export default class Example extends React.Component {
                         </Form>
                         <Container>
                             <Button_Tutorial/>
+                            <br/>
                             <Alert_Tutorial/>
+                            <br/>
+                            <Card_Tutorial/>
+                            <br/>
                             <Slider_Tutorial/>
+                            <br/>
                         </Container>
                     </div>
                 </div>
