@@ -28,6 +28,7 @@ h3 {
   padding-top: 20px;
   width: 100%;
   text-align: center;
+  height: 100%;
 }
 #enterName {
   margin-left: auto;
@@ -39,6 +40,7 @@ h3 {
 }
 #forum {
   margin-top: 30px;
+  margin-bottom: 40px;
   padding: 30px;
   alignItem: center;
   justifyContent: center;
@@ -85,7 +87,6 @@ h3 {
 #switchComponent {
   padding: 20px;
   width: 100%;
-  margin-bottom: 30px;
 }
 
 #seeCode {
@@ -121,4 +122,13 @@ h3 {
 #resize {
   width: 150px;
   height: auto;
+}
+
+#footer {
+  width: 100%;
+  background-color: #edf1f7;
+  margin: 0;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0px 0px 3px;
 }

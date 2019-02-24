@@ -96,31 +96,38 @@ export default class Example extends React.Component {
                                     <GithubPicker onChangeComplete={this.handle_color}/>
                                 </Row>
                             </div>
-                            <Container>
-                                <div id={"buttonComponet"}>
-                                    <Button_Tutorial ref="button_tutorial"/>
+                            <div id="column">
+                                <div id="buttonComponent">
+                                    <Button_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"alertComponent"}>
-                                    <Alert_Tutorial ref="alert_tutorial"/>
+                                <div id="alertComponent">
+                                    <Alert_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"cardComponent"}>
-                                    <Card_Tutorial ref="card_tutorial"/>
+                                <div id="cardComponent">
+                                    <Card_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"sliderComponent"}>
+                                <div id="sliderComponent">
                                     <Slider_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"switchComponent"}>
+                                <div id="switchComponent">
                                     <Switch_Tutorial/>
                                 </div>
-                            </Container>
+                            </div>
                         </div>
+                        <h1>Thanks for visiting.</h1>
+                        <br></br>
                     </div>
+
+                </div>
+                <div id="footer">
+                    <p>Created in Reactstrap by Evan, Nick and Mason for HackCU 2019</p>
                 </div>
             </div>
+
         );
     }
 
@@ -171,4 +178,5 @@ export default class Example extends React.Component {
     changeBackground() {
         this.setState({background: '#ffff'});
     }
+
 }
