@@ -27,6 +27,7 @@ export default class Example extends React.Component {
         this.toggle = this.toggle.bind(this);
         this.reset = this.reset.bind(this);
         this.toggle = this.toggle.bind(this);
+        this.toggle_modal = this.toggle_modal.bind(this);
 
         this.state = {
             isOpen: false,
@@ -64,13 +65,6 @@ export default class Example extends React.Component {
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                     <DropdownItem>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider/>
-                                    <DropdownItem>
                                         <Button onClick={this.reset}>Reset</Button>
                                     </DropdownItem>
                                 </DropdownMenu>
@@ -79,11 +73,16 @@ export default class Example extends React.Component {
                     </Collapse>
                 </Navbar>
                 <div>
-                    <Welcome_Modal updateState={this.updateState}
+                    <Welcome_Modal  toggle_modal={this.toggle_modal}
+                                    modal={this.state.modal}
+                                    updateState={this.updateState}
                                    update={this.update}
                                    value={this.state.value}/>
                 </div>
                 <div style={{background: this.state.background_color}}>
+                    <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center'}}>
+                        <Button color={"secondary"} onClick={this.toggle_modal}>Change Name</Button>
+                    </div>
                     <div id="content" style={{backgroundColor: this.state.background}}>
                         <h1>{this.state.username}</h1>
                         <div id="forum">
@@ -98,23 +97,23 @@ export default class Example extends React.Component {
                             </div>
                             <div id="column">
                                 <div id="buttonComponent">
-                                    <Button_Tutorial/>
+                                    <Button_Tutorial ref="button_tutorial"/>
                                 </div>
                                 <br/>
                                 <div id="alertComponent">
-                                    <Alert_Tutorial/>
+                                    <Alert_Tutorial ref="alert_tutorial"/>
                                 </div>
                                 <br/>
                                 <div id="cardComponent">
-                                    <Card_Tutorial/>
+                                    <Card_Tutorial ref="card_tutorial"/>
                                 </div>
                                 <br/>
                                 <div id="sliderComponent">
-                                    <Slider_Tutorial/>
+                                    <Slider_Tutorial ref="slider_tutorial"/>
                                 </div>
                                 <br/>
                                 <div id="switchComponent">
-                                    <Switch_Tutorial/>
+                                    <Switch_Tutorial ref="switch_tutorial"/>
                                 </div>
                             </div>
                         </div>
@@ -129,6 +128,12 @@ export default class Example extends React.Component {
             </div>
 
         );
+    }
+
+    toggle_modal() {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
     }
 
     reset() {
@@ -154,10 +159,7 @@ export default class Example extends React.Component {
     }
 
     update(e) {
-
-        this.state.value = e.target.value;
         this.setState({value: e.target.value});
-
     }
 
     updateState() {
