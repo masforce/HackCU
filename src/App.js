@@ -24,15 +24,17 @@ export default class Example extends React.Component {
         this.changeBackground = this.changeBackground.bind(this);
         this.handle_color = this.handle_color.bind(this);
         this.toggle = this.toggle.bind(this);
+        this.reset = this.reset.bind(this);
 
         this.state = {
             isOpen: false,
             username: 'And your name is...?',
             value: '',
             stylePath: './index2.css',
-            background_color: '#82b1ff'
+            background_color: '#82b1ff',
         };
     }
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
@@ -66,7 +68,7 @@ export default class Example extends React.Component {
                                     </DropdownItem>
                                     <DropdownItem divider/>
                                     <DropdownItem>
-                                        Reset
+                                        <Button onClick={this.reset}>Reset</Button>
                                     </DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
@@ -123,13 +125,27 @@ export default class Example extends React.Component {
         );
     }
 
+    reset() {
+        this.refs.button_tutorial.reset();
+        this.refs.alert_tutorial.reset();
+        this.refs.card_tutorial.reset();
+        this.setState(
+            {
+                isOpen: false,
+                username: 'And your name is...?',
+                value: '',
+                stylePath: './index2.css',
+                background_color: '#82b1ff',
+            }
+        );
+    }
+
     handle_color(color) {
         console.log(color);
         this.setState({
             background_color: color.hex
         });
     }
-
 
     update(e) {
 
