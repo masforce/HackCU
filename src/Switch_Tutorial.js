@@ -30,12 +30,14 @@ const styles = theme => ({
 class SimpleGrow extends React.Component {
     state = {
         checked: false,
-        message: "Switch is OFF"
+        message: "Switch is OFF."
     };
 
     handleChange = () => {
         this.setState(state => ({ checked: !state.checked,
-                                        message: "Switch is " + (!this.state.checked ? "ON" : "OFF")}));
+                                        message: "Switch is " + (!this.state.checked ? "ON.\n" : "OFF.\n") +
+                                                "code for switch: <Switch checked={checked} onChange={this.handleChange} aria-label=\"Collapse\" />\n" +
+                                                "code for polygon: <Grow in={checked}>{polygon}</Grow>"}));
     };
 
     render() {
