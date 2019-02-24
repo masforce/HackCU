@@ -13,6 +13,8 @@ import Slider_Tutorial from "./Slider_Tutorial";
 import Card_Tutorial from "./Card_Tutorial";
 import Switch_Tutorial from "./Switch_Tutorial";
 import hackcu_image from './images/hackcu_logo.png';
+import { GithubPicker} from 'react-color';
+
 
 export default class Example extends React.Component {
     constructor(props) {
@@ -20,7 +22,7 @@ export default class Example extends React.Component {
         this.updateState = this.updateState.bind(this);
         this.update = this.update.bind(this);
         this.changeBackground = this.changeBackground.bind(this);
-
+        this.handle_color = this.handle_color.bind(this);
         this.toggle = this.toggle.bind(this);
 
         this.state = {
@@ -28,6 +30,7 @@ export default class Example extends React.Component {
             username: 'And your name is...?',
             value: '',
             stylePath: './index2.css',
+            background_color: '#82b1ff'
         };
     }
     toggle() {
@@ -38,10 +41,10 @@ export default class Example extends React.Component {
     render() {
         return (
             <div>
-                <link rel="stylesheet" type="text/css" href='index.css' />
+                <link rel="stylesheet" type="text/css" href='index.css'/>
                 <Navbar style={{backgroundColor: "#edf1f7", boxShadow: '0px 0px 8px'}} light expand="md">
                     <NavbarBrand href="/"><h1><img id="resize" src={hackcu_image}/></h1></NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
+                    <NavbarToggler onClick={this.toggle}/>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
@@ -61,7 +64,7 @@ export default class Example extends React.Component {
                                     <DropdownItem>
                                         Option 2
                                     </DropdownItem>
-                                    <DropdownItem divider />
+                                    <DropdownItem divider/>
                                     <DropdownItem>
                                         Reset
                                     </DropdownItem>
@@ -70,47 +73,60 @@ export default class Example extends React.Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
-                <div id="content" style={{backgroundColor: this.state.background}}>
-                    <div id="enterName">
-                        <Input style={{width:"80%", margin:"auto", padding:"20px"}} type={"text"} placeholder="(enter your username here)" value={this.state.value} onChange={this.update} />
-                        <Button style={{width:"20%"}} onClick={this.updateState}>Submit</Button>
-                    </div>
-                    <h1>{this.state.username}</h1>
-                    <div id="forum">
-                        <h2>See what parts of this site you can change:</h2>
-                        <Button style={{width:"20%"}}>Change Background</Button>
-                        <Form>
-                            <FormGroup>
-                                <Label for="exampleText">Text Area</Label>
-                                <Input type="textarea" name="text" id="exampleText" />
-                            </FormGroup>
-                        </Form>
-                        <Container>
-                            <div id={"buttonComponet"}>
-                                <Button_Tutorial/>
+                <div style={{background: this.state.background_color}}>
+                    <div id="content" style={{backgroundColor: this.state.background}}>
+                        <div id="enterName">
+                            <Input style={{width:"80%", margin:"auto", padding:"20px"}} type={"text"} placeholder="(enter your username here)" value={this.state.value} onChange={this.update} />
+                            <Button style={{width:"20%"}} onClick={this.updateState}>Submit</Button>
+                        </div>
+                        <h1>{this.state.username}</h1>
+                        <div id="forum">
+                            <h2>See what parts of this site you can change:</h2>
+                            <Button style={{width:"20%"}}>Change Background</Button>
+                            <Form>
+                                <FormGroup>
+                                    <Label for="exampleText">Text Area</Label>
+                                    <Input type="textarea" name="text" id="exampleText" />
+                                </FormGroup>
+                            </Form>
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <GithubPicker onChangeComplete={this.handle_color}/>
                             </div>
-                            <br/>
-                            <div id={"alertComponent"}>
-                                <Alert_Tutorial/>
-                            </div>
-                            <br/>
-                            <div id={"cardComponent"}>
-                                <Card_Tutorial/>
-                            </div>
-                            <br/>
-                            <div id={"sliderComponent"}>
-                                <Slider_Tutorial/>
-                            </div>
-                            <br/>
-                            <div id={"switchComponent"}>
-                                <Switch_Tutorial/>
-                            </div>
-                        </Container>
+                            <Container>
+                                <div id={"buttonComponet"}>
+                                    <Button_Tutorial/>
+                                </div>
+                                <br/>
+                                <div id={"alertComponent"}>
+                                    <Alert_Tutorial/>
+                                </div>
+                                <br/>
+                                <div id={"cardComponent"}>
+                                    <Card_Tutorial/>
+                                </div>
+                                <br/>
+                                <div id={"sliderComponent"}>
+                                    <Slider_Tutorial/>
+                                </div>
+                                <br/>
+                                <div id={"switchComponent"}>
+                                    <Switch_Tutorial/>
+                                </div>
+                            </Container>
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
+
+    handle_color(color) {
+        console.log(color);
+        this.setState({
+            background_color: color.hex
+        });
+    }
+
 
     update(e) {
 
@@ -121,12 +137,16 @@ export default class Example extends React.Component {
 
     updateState() {
         if (this.state.value != "") {
-            this.setState({username: 'Nice to meet you, ' + this.state.value + '!'});
-            this.setState({value: ""});
+            this.setState({
+                username: 'Nice to meet you, ' + this.state.value + '!',
+                value: ""
+            });
         }
         else {
-            this.setState({username: 'You didn\'t type anything.'});
-            this.setState({value: ""});
+            this.setState({
+                username: 'You didn\'t type anything.',
+                value: ""
+            });
         }
     }
 
