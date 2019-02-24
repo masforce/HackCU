@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/lab/Slider';
+import Grid from '@material-ui/core/Grid';
 
 const styles = {
     root: {
@@ -21,13 +22,13 @@ class StepSlider extends React.Component {
     handleChange = (event, value) => {
         this.setState({value: value,
                              message: "<Slider\n" +
-                                 "                        classes={{ container: classes.slider }}\n" +
-                                 "                        value={" + this.state.value + "}\n" +
-                                 "                        min={0}\n" +
-                                 "                        max={10}\n" +
-                                 "                        step={1}\n" +
-                                 "                        onChange={this.handleChange}\n" +
-                                 "                    />"});
+                                 "                classes={{ container: classes.slider }}\n" +
+                                 "                value={" + this.state.value + "}\n" +
+                                 "                min={0}\n" +
+                                 "                max={10}\n" +
+                                 "                step={1}\n" +
+                                 "                onChange={this.handleChange}\n" +
+                                 "/>"});
     };
 
     render() {

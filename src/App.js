@@ -10,6 +10,7 @@ import './App.css';
 import Alert_Tutorial from "./Alert_Tutorial";
 import Button_Tutorial from "./Button_Tutorial";
 import Slider_Tutorial from "./Slider_Tutorial";
+import Switch_Tutorial from "./Switch_Tutorial";
 
 export default class Example extends React.Component {
     constructor(props) {
@@ -90,6 +91,7 @@ export default class Example extends React.Component {
                             <Button_Tutorial/>
                             <Alert_Tutorial/>
                             <Slider_Tutorial/>
+                            <Switch_Tutorial/>
                         </Container>
                     </div>
                 </div>
