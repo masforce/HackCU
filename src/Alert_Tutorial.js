@@ -16,6 +16,7 @@ export default class Alert_Tutorial extends Component {
         };
         this.handle_alert_change = this.handle_alert_change.bind(this);
         this.update_alert_text = this.update_alert_text.bind(this);
+        this.reset = this.reset.bind(this);
     };
 
     render() {
@@ -51,6 +52,17 @@ export default class Alert_Tutorial extends Component {
                     </div>
                 </form>
             </div>
+        );
+    }
+
+    reset() {
+        this.setState(
+            {
+                alert_selected_option: "default",
+                alert_color: "secondary",
+                alert_message: "",
+                alert_text: "I am an Alert! Edit Me!"
+            }
         );
     }
 

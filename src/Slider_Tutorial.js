@@ -58,6 +58,7 @@ class StepSlider extends React.Component {
         );
     }
 }
+
 StepSlider.propTypes = {
     classes: PropTypes.object.isRequired,
 };
