@@ -53,6 +53,7 @@ class SimpleGrow extends React.Component {
             <div className={classes.root}>
                 <h1>SWITCHES</h1>
                 <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
+                {this.state.message}
                 <div className={classes.container}>
                     <Grow in={checked}>{polygon}</Grow>
                     {/* Conditionally applies the timeout property to change the entry speed. */}
@@ -63,7 +64,27 @@ class SimpleGrow extends React.Component {
                     >
                         {polygon}
                     </Grow>
-                    {this.state.message}
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 2000 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 3000 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
+                    <Grow
+                        in={checked}
+                        style={{ transformOrigin: '0 0 0' }}
+                        {...(checked ? { timeout: 4000 } : {})}
+                    >
+                        {polygon}
+                    </Grow>
                 </div>
             </div>
         );
