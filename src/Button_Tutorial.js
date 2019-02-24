@@ -22,7 +22,7 @@ export default class Button_Tutorial extends Component {
             <div>
                 <h1>BUTTONS</h1>
                 <Button color={this.state.button_color}>{this.state.button_text}</Button>
-                <Input type="text" onChange={this.update_button_text}/>
+                <Input type="text" placeholder="Enter a name for your button..." onChange={this.update_button_text}/>
                 <form>
                     <div className="radio">
                         <label>

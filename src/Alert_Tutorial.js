@@ -23,7 +23,7 @@ export default class Alert_Tutorial extends Component {
             <div>
                 <h1>ALERTS</h1>
                 <Alert color={this.state.alert_color}>{this.state.alert_text}</Alert>
-                <Input type="text" onChange={this.update_alert_text}/>
+                <Input type="text" placeholder="Enter some text for your alert message..." onChange={this.update_alert_text}/>
                 <form>
                     <div className="radio">
                         <label>
