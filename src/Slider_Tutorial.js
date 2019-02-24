@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/lab/Slider';
 import Grid from '@material-ui/core/Grid';
+import Container from "reactstrap/es/Container";
 
 const styles = {
     root: {
@@ -36,20 +37,24 @@ class StepSlider extends React.Component {
         const { value } = this.state;
 
         return (
-            <div>
+            <Container>
                 <h1>SLIDERS</h1>
-                <div className={classes.root}>
-                    <Slider
-                        classes={{ container: classes.slider }}
-                        value={value}
-                        min={0}
-                        max={10}
-                        step={1}
-                        onChange={this.handleChange}
-                    />
-                    {this.state.message}
+                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <div className={classes.root}>
+                        <Slider
+                            classes={{ container: classes.slider }}
+                            value={value}
+                            min={0}
+                            max={10}
+                            step={1}
+                            onChange={this.handleChange}
+                        />
+                        <div id={"seeSliderCode"}>
+                            {this.state.message}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </Container>
         );
     }
 }

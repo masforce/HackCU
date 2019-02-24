@@ -42,7 +42,7 @@ export default class Button_Tutorial extends Component {
                             BLUE
                         </label>
                     </div>
-                    <div>
+                    <div id={"seeCode"}>
                         {this.state.message}
                     </div>
                 </form>

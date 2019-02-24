@@ -42,7 +42,7 @@ export default class Alert_Tutorial extends Component {
                             BLUE
                         </label>
                     </div>
-                    <div>
+                    <div id={"seeCode"}>
                         {this.state.alert_message}
                     </div>
                 </form>

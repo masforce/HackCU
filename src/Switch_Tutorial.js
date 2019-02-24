@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
 import Paper from '@material-ui/core/Paper';
 import Grow from '@material-ui/core/Grow';
+import Container from "reactstrap/es/Container";
 
 const styles = theme => ({
     root: {
@@ -50,78 +51,82 @@ class SimpleGrow extends React.Component {
         );
 
         return (
-            <div className={classes.root}>
+            <Container>
                 <h1>SWITCHES</h1>
                 <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
-                {this.state.message}
-                <div className={classes.container}>
-                    <Grow in={checked}>{polygon}</Grow>
-                    {/* Conditionally applies the timeout property to change the entry speed. */}
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 500 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 1000 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 1500 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 2000 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 2500 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 3000 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 3500 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 4000 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
-                    <Grow
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 4500 } : {})}
-                    >
-                        {polygon}
-                    </Grow>
+                <div id={"seeCode"}>
+                    {this.state.message}
                 </div>
-            </div>
+                <div className={classes.root} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <div className={classes.container}>
+                        <Grow in={checked}>{polygon}</Grow>
+                        {/* Conditionally applies the timeout property to change the entry speed. */}
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 500 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 1000 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 1500 } : {})}
+                         >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 2000 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 2500 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 3000 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 3500 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 4000 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                        <Grow
+                            in={checked}
+                            style={{ transformOrigin: '0 0 0' }}
+                            {...(checked ? { timeout: 4500 } : {})}
+                        >
+                            {polygon}
+                        </Grow>
+                    </div>
+                </div>
+            </Container>
         );
     }
 }
