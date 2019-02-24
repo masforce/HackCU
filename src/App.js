@@ -81,42 +81,45 @@ export default class Example extends React.Component {
                         </div>
                         <h1>{this.state.username}</h1>
                         <div id="forum">
-                            <h2>See what parts of this site you can change:</h2>
-                            <Button style={{width:"20%"}}>Change Background</Button>
-                            <Form>
-                                <FormGroup>
-                                    <Label for="exampleText">Text Area</Label>
-                                    <Input type="textarea" name="text" id="exampleText" />
-                                </FormGroup>
-                            </Form>
+                            <h2>See what Reactstrap components of this site you can change:</h2>
+                            <br></br>
+                            <hr></hr>
+                            <p>Change Background</p>
                             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 <GithubPicker onChangeComplete={this.handle_color}/>
                             </div>
-                            <Container>
-                                <div id={"buttonComponet"}>
+                            <div id="column">
+                                <div id="buttonComponent">
                                     <Button_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"alertComponent"}>
+                                <div id="alertComponent">
                                     <Alert_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"cardComponent"}>
+                                <div id="cardComponent">
                                     <Card_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"sliderComponent"}>
+                                <div id="sliderComponent">
                                     <Slider_Tutorial/>
                                 </div>
                                 <br/>
-                                <div id={"switchComponent"}>
+                                <div id="switchComponent">
                                     <Switch_Tutorial/>
                                 </div>
-                            </Container>
+                            </div>
                         </div>
+                        <h1>Thanks for visiting.</h1>
+                        <br></br>
                     </div>
+
+                </div>
+                <div id="footer">
+                    <p>Created in Reactstrap by Evan, Nick and Mason for HackCU 2019</p>
                 </div>
             </div>
+
         );
     }
 
@@ -153,4 +156,5 @@ export default class Example extends React.Component {
     changeBackground() {
         this.setState({background: '#ffff'});
     }
+
 }
