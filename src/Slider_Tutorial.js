@@ -36,7 +36,8 @@ class StepSlider extends React.Component {
 
         return (
             <div>
-                <h1>SLIDERS</h1>
+                <h3>SLIDERS</h3>
+                <br></br>
                 <div className={classes.root}>
                     <Slider
                         classes={{ container: classes.slider }}
@@ -46,6 +47,8 @@ class StepSlider extends React.Component {
                         step={1}
                         onChange={this.handleChange}
                     />
+                </div>
+                <div id="seeCode">
                     {this.state.message}
                 </div>
             </div>

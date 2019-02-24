@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {Button, Container, Row, Col, Pane, Collapse,
+import {Button, Container, Collapse,
     Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    Form, FormGroup, Label, Input, FormText} from 'reactstrap';
+    Input} from 'reactstrap';
 import './App.css';
 import Alert_Tutorial from "./Alert_Tutorial";
 import Button_Tutorial from "./Button_Tutorial";
@@ -23,9 +23,19 @@ export default class Example extends React.Component {
             isOpen: false,
             username: 'And your name is...?',
             value: '',
-            stylePath: './index2.css'
+            stylePath: './index2.css',
+            curTime: null
         };
     }
+
+    componentDidMount() {
+        setInterval( () => {
+            this.setState({
+                curTime : new Date().toLocaleString()
+            })
+        },1000)
+    }
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
@@ -79,19 +89,29 @@ export default class Example extends React.Component {
                     <h1>{this.state.username}</h1>
                     <div id="forum">
                         <h2>See what parts of this site you can change:</h2>
+                        <br></br>
+                        <hr></hr>
                         <Button style={{width:"20%"}}>Change Background</Button>
-                        <Form>
-                            <FormGroup>
-                                <Label for="exampleText">Text Area</Label>
-                                <Input type="textarea" name="text" id="exampleText" />
-                            </FormGroup>
-                        </Form>
-                        <Container>
-                            <Button_Tutorial/>
-                            <Alert_Tutorial/>
-                            <Slider_Tutorial/>
-                        </Container>
+
+
+                        <div id="column">
+                            <div id={"buttonComponent"}>
+                                <Button_Tutorial/>
+                            </div>
+
+                            <div id={"alertComponent"}>
+                                <Alert_Tutorial/>
+                            </div>
+
+                            <div id={"sliderComponent"}>
+                                <Slider_Tutorial/>
+                            </div>
+                        </div>
+
                     </div>
+                </div>
+                <div>
+                    <h2>Seconds: {this.state.curTime}</h2>
                 </div>
             </div>
         );
@@ -118,6 +138,13 @@ export default class Example extends React.Component {
     changeBackground() {
         this.setState({background: '#ffff'});
     }
+
+    tick() {
+        this.setState(prevState => ({
+            seconds: prevState.seconds + 1
+        }));
+    }
+
 
 
 
