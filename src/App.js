@@ -49,7 +49,8 @@ class Example extends React.Component {
             modal: true,
             value: 4,
             message: "",
-            endline: ''
+            endline: '',
+            background_message: ''
         };
     }
 
@@ -118,6 +119,10 @@ class Example extends React.Component {
                                         <Row>
                                             <GithubPicker onChangeComplete={this.handle_color}/>
                                         </Row>
+                                    </div>
+                                    <p>This is what the code looks like:</p>
+                                    <div id={"seeBackgroundCode"}>
+                                        {this.state.background_message}
                                     </div>
                                 </div>
                                 <div className="customizerElement">
@@ -201,7 +206,8 @@ class Example extends React.Component {
                 value: '4',
                 stylePath: './index2.css',
                 background_color: '#82b1ff',
-                endline: 'Thanks for visiting!'
+                endline: 'Thanks for visiting!',
+                background_message: ''
             }
         );
     }
@@ -215,7 +221,9 @@ class Example extends React.Component {
     handle_color(color) {
         console.log(color);
         this.setState({
-            background_color: color.hex
+            background_color: color.hex,
+            background_message: `<div style={{background: ${this.state.background_color}}}>
+                                  </div>`
         });
     }
 

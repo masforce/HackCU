@@ -151,3 +151,16 @@ h3 {
 .customizerElement {
     width: 50%;
 }
+
+#seeBackgroundCode {
+  margin-left: auto;
+  margin-right: auto;
+  height: 120px;
+  background-color: white;
+  padding: 5px;
+  border-style: inset;
+  border-color: #bfc0c1;
+  font-family: 'Ubuntu', 'Arial';
+  font-weight: bold;
+  width: 50%;
+}
