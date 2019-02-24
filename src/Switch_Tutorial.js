@@ -138,8 +138,3 @@ SimpleGrow.propTypes = {
 
 export default withStyles(styles)(SimpleGrow);
 
-SimpleGrow.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SimpleGrow);
