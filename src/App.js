@@ -78,34 +78,31 @@ export default class Example extends React.Component {
                     <h1>{this.state.username}</h1>
                     <div id="forum">
                         <h2>See what parts of this site you can change:</h2>
+                        <br></br>
+                        <hr></hr>
                         <Button style={{width:"20%"}}>Change Background</Button>
-                        <Form>
-                            <FormGroup>
-                                <Label for="exampleText">Text Area</Label>
-                                <Input type="textarea" name="text" id="exampleText" />
-                            </FormGroup>
-                        </Form>
-                        <Container>
-                            <div id={"buttonComponet"}>
+
+                        <div id="column">
+                            <div id="buttonComponent">
                                 <Button_Tutorial/>
                             </div>
                             <br/>
-                            <div id={"alertComponent"}>
+                            <div id="alertComponent">
                                 <Alert_Tutorial/>
                             </div>
                             <br/>
-                            <div id={"cardComponent"}>
+                            <div id="cardComponent">
                                 <Card_Tutorial/>
                             </div>
                             <br/>
-                            <div id={"sliderComponent"}>
+                            <div id="sliderComponent">
                                 <Slider_Tutorial/>
                             </div>
                             <br/>
-                            <div id={"switchComponent"}>
+                            <div id="switchComponent">
                                 <Switch_Tutorial/>
                             </div>
-                        </Container>
+                        </div>
                     </div>
                 </div>
             </div>
