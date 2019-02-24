@@ -12,6 +12,7 @@ import Button_Tutorial from "./Button_Tutorial";
 import Slider_Tutorial from "./Slider_Tutorial";
 import Card_Tutorial from "./Card_Tutorial";
 import Switch_Tutorial from "./Switch_Tutorial";
+import Password from './Password';
 
 export default class Example extends React.Component {
     constructor(props) {
@@ -21,11 +22,12 @@ export default class Example extends React.Component {
         this.changeBackground = this.changeBackground.bind(this);
 
         this.toggle = this.toggle.bind(this);
+
         this.state = {
             isOpen: false,
             username: 'And your name is...?',
             value: '',
-            stylePath: './index2.css'
+            stylePath: './index2.css',
         };
     }
     toggle() {
@@ -44,6 +46,9 @@ export default class Example extends React.Component {
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink href="/components/">Components</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={this.open_password_component}>Password</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
@@ -103,6 +108,10 @@ export default class Example extends React.Component {
                 </div>
             </div>
         );
+    }
+
+    open_password_component() {
+      return (<Password/>);
     }
 
     update(e) {
